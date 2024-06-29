@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <!--nav-->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css">
+    <link rel="stylesheet" href="nav and head/css/libs.bundle.css">
+    <link rel="stylesheet" href="nav and head/css/theme.bundle.css">
+
+
+    <!--service base -->
+    <link rel="stylesheet" href="service base/sb-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+    <!--about us-->
+    <link rel="stylesheet" href="about us/about-style.css">
+    <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="assets/libs/swiper/dist/css/swiper.min.css">
+
+
+    <!--features-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+
+
+    <!--footer-->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css">
+    <link rel="stylesheet" href="footer/css/libs.bundle.css">
+    <link rel="stylesheet" href="footer/css/theme.bundle.css">
+
+
+    
+    <!-- Title -->
+    <title>Collaby</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156446909-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-156446909-2");
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="./index.html">
+          <img src="nav and head/images/images/logo.png" class="navbar-brand-img" alt="...">
+        </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+                <!-- Toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fe fe-x"></i>
+          </button>
+
+                <!-- Navigation -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarLandings" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                Home
+              </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                Features
+              </a>
+              
+              <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDocumentation">
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item" href="./docs/index.html">
+
+                        <!-- Icon -->
+                        <div class="icon icon-sm text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                            <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                          </svg>
+                        
+                        </div>
+
+                        <!-- Content -->
+                        <div class="ms-4">
+
+                            <!-- Heading -->
+                            <h6 class="fw-bold text-uppercase text-primary mb-0">
+                                Live Chat
+                            </h6>
+
+                            <!-- Text -->
+                            <p class="fs-sm text-gray-700 mb-0">
+                             Start a live chat with your team.
+                            </p>
+
+                        </div>
+
+                    </a>
+                    <a class="list-group-item" href="./docs/alerts.html">
+
+                        <!-- Icon -->
+                        <div class="icon icon-sm text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-video" viewBox="0 0 16 16">
+                                <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                                <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm10.798 11c-.453-1.27-1.76-3-4.798-3-3.037 0-4.345 1.73-4.798 3H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1z"/>
+                              </svg>
+                        </div>
+                            
+                        <!-- Content -->
+                        <div class="ms-4">
+
+                            <!-- Heading -->
+                            <h6 class="fw-bold text-uppercase text-primary mb-0">
+                                Video Conference
+                            </h6>
+
+                            <!-- Text -->
+                            <p class="fs-sm text-gray-700 mb-0">
+                                Stay connected through calls.
+                            </p>
+
+                        </div>
+
+                    </a>
+                    <a class="list-group-item" href="./docs/changelog.html">
+
+                        <!-- Icon -->
+                        <div class="icon icon-sm text-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+                              </svg>
+                           </div>
+
+                        <!-- Content -->
+                        <div class="ms-4">
+
+                            <!-- Heading -->
+                            <h6 class="fw-bold text-uppercase text-primary mb-0">
+                                Task Management
+                            </h6>
+
+                            <!-- Text -->
+                            <p class="fs-sm text-gray-700 mb-0">
+                                Master your tasks effortlessly
+                            </p>
+
+                        </div>
+
+                        <!-- Badge -->
+                        
+
+                    </a>
+                </div>
+            </div>
+                    </li>
+                   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarAccount" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                About Us
+              </a>
+                    </li>
+                   
+                </ul>
+
+                <!-- Button -->
+                <div class="btn-group">
+                    <a class="navbar-btn btn btn-sm btn-dark" href="#" target="_blank">
+                      Sign Up
+                    </a>
+                   
+                  </div>
+            </div>
+
+        </div>
+    </nav>
+    <section class="pt-4 pt-md-11">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-5 col-lg-6 order-md-2">
+
+                    <!-- Image -->
+                    <img src="nav and head/images/images/Croods - Keeping in Touch.png" class="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0" alt="..." data-aos="fade-up" data-aos-delay="100" width="4500" height="4000">
+
+                </div>
+                <div class="col-12 col-md-7 col-lg-6 order-md-1" data-aos="fade-up">
+
+                    <!-- Heading -->
+                    <h1 class="display-3 text-center text-md-start">
+                        Welcome to <span class="text-primary" >Collaby</span> !!! <br> 
+                    </h1>
+
+                    <!-- Text -->
+                    <p class="lead text-center text-md-start text-body-secondary mb-6 mb-lg-8">
+                        Streamline your workflow, elevate your productivity.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="text-center text-md-start">
+                        <a href="overview.html" class="btn btn-dark shadow lift me-1">
+                Get Started 
+                </a>
+                    
+                        <a href="docs/index.html" class="btn btn-primary-subtle lift">
+                Log In
+              </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- / .row -->
+        </div>
+        <!-- / .container -->
+    </section>
+
+
+    <!--service base-->
+    
+    <section class="sec-01">
+        <div class="scroll-container">
+            <h2 class="main-title">The All-In-One Platform</h2>
+            <div class="scroll-content">
+                <div class="us-image">
+                    <img src="service base/images/8-BOIfyI6T1CIkSRV.png" alt="image of collaby">
+                </div>
+                <div class="text-box">
+                    <h3></h3>
+                    <p> Discover a seamless online experience , offering a comprehensive suite of services tailored to your needs. From real-time chatting and crystal-clear video calls to efficient task management and robust version control, our platform ensures effortless collaboration and productivity. Feel secure with our reliable workspace management features, designed to safeguard your data and streamline workflows. Whether you're coordinating projects or staying connected with colleagues, our user-friendly interface makes it easy to work efficiently and stay in touch, fostering trust and enhancing your online interactions like never before.
+                    </p>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+  
+    <!--about us-->
+    <section class="sec-01">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-5 col-lg-6 order-md-2">
+
+            <!-- Image -->
+            <img src="about us/illustration-1.png" alt="..." class="img-fluid mb-6 mb-md-0">
+
+        </div>
+        <div class="col-12 col-md-7 col-lg-6 order-md-1">
+
+            <!-- Heading -->
+            <h1>
+                Empower Collaboration <br>
+                <span class="text-primary ">Elevate Results</span>
+            </h1>
+
+            <!-- Text -->
+            <p class="fs-lg text-gray-700 mb-6">
+                Experience seamless collaboration with our versatile platform offering live chat, video calls, task management, version control, and workspace organization. Feel secure with our robust data protection measures while enjoying effortless productivity and easy communication. Stay connected, work efficiently, and trust in our platform to streamline your workflows and enhance your online interactions effortlessly.
+            </p>
+
+            <!-- Stats -->
+            <div class="d-flex">
+                <div class="pe-5">
+                    <h3 class="mb-0">
+                        <span data-countup="{&quot;startVal&quot;: 0}" data-to="100" data-aos="" data-aos-id="countup:in" class="aos-init aos-animate">100</span>%
+                    </h3>
+                    <p class="text-gray-700 mb-0">
+                        Satisfaction
+                    </p>
+                </div>
+                <div class="border-start border-gray-300"></div>
+                <div class="px-5">
+                    <h3 class="mb-0">
+                        <span data-countup="{&quot;startVal&quot;: 0}" data-to="24" data-aos="" data-aos-id="countup:in" class="aos-init aos-animate">24</span>/
+                        <span data-countup="{&quot;startVal&quot;: 0}" data-to="7" data-aos="" data-aos-id="countup:in" class="aos-init aos-animate">7</span>
+                    </h3>
+                    <p class="text-gray-700 mb-0">
+                        Support
+                    </p>
+                </div>
+                <div class="border-start border-gray-300"></div>
+               
+            </div>
+
+        </div>
+    </div>
+</section>
+<br><br>
+<br>
+   
+<!--footer-->
+<section class=" bg-dark ">
+    
+    <div class="container pt-8 pt-md-11">
+        <h2 class="main-title text-white">Frequently Asked Questions</h2>
+        <div class="row">
+            <div class="col-12 col-md-6">
+
+                <!-- Item -->
+                <div class="d-flex">
+
+                    <!-- Badge -->
+                    <div class="badge badge-lg badge-rounded-circle text-bg-success">
+                        <span>?</span>
+                    </div>
+
+                    <div class="ms-5">
+
+                        <!-- Heading -->
+                        <h4 class="text-white">
+                            How can I start a video call or chat with someone on the platform?
+                        </h4>
+
+                        <!-- Text -->
+                        <p class="text-body-secondary mb-6 mb-md-8">
+                            To initiate a video call or chat, simply navigate to the user's profile or the team/project space, and click on the video call or chat icon. You can also start a conversation directly from the messaging sidebar.
+                            </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Item -->
+                <div class="d-flex">
+
+                    <!-- Badge -->
+                    <div class="badge badge-lg badge-rounded-circle text-bg-success">
+                        <span>?</span>
+                    </div>
+
+                    <div class="ms-5">
+
+                        <!-- Heading -->
+                        <h4 class="text-white">
+                            How does version control work on the platform?
+                        </h4>
+
+                        <!-- Text -->
+                        <p class="text-body-secondary mb-6 mb-md-0">
+                            Our platform automatically tracks versions of files uploaded to shared projects or repositories. You can view and compare different versions, revert changes if needed, and see who made modifications and when.
+                            </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6">
+
+                <!-- Item -->
+                <div class="d-flex">
+
+                    <!-- Badge -->
+                    <div class="badge badge-lg badge-rounded-circle text-bg-success">
+                        <span>?</span>
+                    </div>
+
+                    <div class="ms-5">
+
+                        <!-- Heading -->
+                        <h4 class="text-white">
+                            What features are available for task management?
+                        </h4>
+
+                        <!-- Text -->
+                        <p class="text-body-secondary mb-6 mb-md-8">
+                            Our task management tools allow you to create tasks, assign them to team members, set deadlines, and track progress. You can organize tasks into projects, set priorities, and receive notifications for updates and deadlines.
+                            </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Item -->
+                <div class="d-flex">
+
+                    <!-- Badge -->
+                    <div class="badge badge-lg badge-rounded-circle text-bg-success">
+                        <span>?</span>
+                    </div>
+
+                    <div class="ms-5">
+
+                        <!-- Heading -->
+                        <h4 class="text-white">
+                            Is there a limit to the number of participants in a video call or chat session?
+                        </h4>
+
+                        <!-- Text -->
+                        <p class="text-body-secondary mb-6 mb-md-0">
+                            Video calls and chat sessions support multiple participants simultaneously. The exact limit depends on the plan you're subscribed to, with options available for small teams up to larger organizations.
+                           </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- / .row -->
+    </div>
+    <!-- / .container -->
+</section>
+<section class="py-8 py-md-11 bg-dark ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                <!-- Badge -->
+                <span class="badge rounded-pill text-bg-gray-700-subtle mb-4">
+          <span class="h6 fw-bold text-uppercase">Get started</span>
+                </span>
+
+                <!-- Heading -->
+                <h1 class="display-4 text-white">
+                   
+                    Your Workspace - Your Way
+                    
+                </h1>
+
+                <!-- Text -->
+                <p class="fs-lg text-body-secondary mb-6 mb-md-8">
+                    Transforming teamwork with integrated tools for enhanced collaboration and productivity.
+                </p>
+
+                <!-- Button -->
+                <a href="https://themes.getbootstrap.com/product/landkit/" target="_blank" class="btn btn-success lift">
+          Get Started
+        </a>
+
+            </div>
+        </div>
+        <!-- / .row -->
+    </div>
+    <!-- / .container -->
+</section>
+
+<div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+        
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">
+        <img src="nav and head/images/images/logo.png" alt="" width="100">
+      </p>
+    </footer>
+  </div>
+
+
+    
+
+
+
+
+
+<!--script for nav-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="nav and head/js/vendor.bundle.js"></script>
+<script src="nav and head/js/theme.bundle.js"></script>
+
+<!--script for service base-->
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 500,
+        delay: 100
+    });
+    ScrollReveal().reveal('.main-title, .section-title',{delay: 300, origin: 'left'});
+    ScrollReveal().reveal('.sec-01 .us-image, .info',{delay: 400, origin: 'bottom'});
+    ScrollReveal().reveal('.text-box',{delay: 500, origin: 'right'});
+    ScrollReveal().reveal('.media-icons',{delay: 300, origin: 'bottom', interval: 200});
+    ScrollReveal().reveal('.sec-02 .us-image',{delay: 300, origin: 'top'});
+</script>
+
+<!--script for features-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!--script for footer-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="footer/js/vendor.bundle.js"></script>
+<script src="footer/js/theme.bundle.js"></script>
+
+
+</body>
+</html>

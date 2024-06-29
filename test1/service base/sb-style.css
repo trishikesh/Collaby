@@ -1,0 +1,116 @@
+:root{
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* CSS of animation on scrolling */
+.sec-01{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px;
+    color: #0a0000;
+}
+
+.scroll-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.main-title{
+    
+    color: rgb(4, 4, 156);
+    font-size: 4em;
+    margin-bottom: 50px;
+}
+
+.scroll-content{
+    position: relative;
+    width: 1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.scroll-content .us-image{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    }
+
+    .scroll-content .us-image img{
+        z-index: 111;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+
+    }
+    .scroll-content .text-box{
+        z-index: 222;
+        background: rgba(255,255, 255,0.1);
+        backdrop-filter: blur(20px);
+        padding: 40px;
+        max-width: 400px;
+        border: 1px solid rgba(255,255, 255,0.1);
+        border-radius: 10px;
+        transform: translate(-80px,50px);
+
+    }
+    .scroll-content .text-box h3{
+        color: rgba(1, 16, 66);
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+.media-icons{
+    margin-top: 100px;
+    }
+.media-icons a{
+    color: #fff;
+    font-size: 2em;
+    margin: 60px;
+}
+
+.section-title{
+    font-size: 3em;
+    margin-bottom: 80px;
+
+}
+
+.info-title{
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.info{
+    width: 700px;
+    margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+
