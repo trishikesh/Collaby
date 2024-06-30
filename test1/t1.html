@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--log in and sign up-->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="register.css">
     
     
     <!--nav-->
@@ -35,6 +39,241 @@
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css">
     <link rel="stylesheet" href="footer/css/libs.bundle.css">
     <link rel="stylesheet" href="footer/css/theme.bundle.css">
+    <style>
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      
+        .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+          max-width: 800px;
+          border-radius: 10px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          animation: slide-down 0.3s ease-out forwards;
+        }
+        
+      
+        @keyframes slide-down {
+          0% {
+            transform: translateY(-20px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+          
+  .licket {
+    margin-top: 20px;
+  }
+  
+  .licket .input {
+    width: 90%;
+    background: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+  }
+  
+  .licket .input::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .licket .input::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .licket .input:focus {
+    outline: none;
+    border-inline: 2px solid #12b1d1;
+  }
+  
+  .licket .forgot-password {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  .licket .forgot-password a {
+    font-size: 11px;
+    color: #0099ff;
+    text-decoration: none;
+  }
+  
+  .licket .login-button {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    background: linear-gradient(
+      45deg,
+      rgb(16, 137, 211) 0%,
+      rgb(18, 177, 209) 100%
+    );
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .licket .login-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .licket .login-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  .latch {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .l-title {
+    font-size: 28px; 
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .l-title::before,.l-title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  .l-title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  .l-title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: royalblue;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .latch {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .latch label {
+    position: relative;
+  }
+  
+  .latch label .input {
+    width: 90%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .latch label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .latch label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .latch label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .latch label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    width: 90%;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+    </style>
 
 
     
@@ -184,7 +423,7 @@
 
                 <!-- Button -->
                 <div class="btn-group">
-                    <a class="navbar-btn btn btn-sm btn-dark" href="#" target="_blank">
+                    <a class="navbar-btn btn btn-sm btn-dark" href="#" id="get-started-btn" target="_blank">
                       Sign Up
                     </a>
                    
@@ -216,11 +455,11 @@
 
                     <!-- Buttons -->
                     <div class="text-center text-md-start">
-                        <a href="overview.html" class="btn btn-dark shadow lift me-1">
+                        <a id="get-started-btn" class="btn btn-dark shadow lift me-1">
                 Get Started 
                 </a>
                     
-                        <a href="docs/index.html" class="btn btn-primary-subtle lift">
+                        <a href="#" id="log-in-btn" class="btn btn-primary-subtle lift">
                 Log In
               </a>
                     </div>
@@ -244,7 +483,7 @@
                 </div>
                 <div class="text-box">
                     <h3></h3>
-                    <p style="text-align: center;"> Discover a seamless online experience , offering a comprehensive suite of services tailored to your needs. From real-time chatting and crystal-clear video calls to efficient task management and robust version control, our platform ensures effortless collaboration and productivity. Feel secure with our reliable workspace management features, designed to safeguard your data and streamline workflows. Whether you're coordinating projects or staying connected with colleagues, our user-friendly interface makes it easy to work efficiently and stay in touch, fostering trust and enhancing your online interactions like never before.
+                    <p> Discover a seamless online experience , offering a comprehensive suite of services tailored to your needs. From real-time chatting and crystal-clear video calls to efficient task management and robust version control, our platform ensures effortless collaboration and productivity. Feel secure with our reliable workspace management features, designed to safeguard your data and streamline workflows. Whether you're coordinating projects or staying connected with colleagues, our user-friendly interface makes it easy to work efficiently and stay in touch, fostering trust and enhancing your online interactions like never before.
                     </p>
 
                 </div>
@@ -331,7 +570,7 @@
 
                         <!-- Text -->
                         <p class="text-body-secondary mb-6 mb-md-8">
-                            To initiate a video call or chat, simply navigate to the user's profile or the team/project space, and click on the video call or chat icon. You can also start a conversation directly from the messaging sidebar.
+                            To initiate a video call or chat, simply navigate to the user's profile, and then click on start video conference, you will be redirected to join the meet. Share the browser's link with others and have the meet!   
                             </p>
 
                     </div>
@@ -350,12 +589,12 @@
 
                         <!-- Heading -->
                         <h4 class="text-white">
-                            How does version control work on the platform?
+                            How does real time chat work on the platform?
                         </h4>
 
                         <!-- Text -->
                         <p class="text-body-secondary mb-6 mb-md-0">
-                            Our platform automatically tracks versions of files uploaded to shared projects or repositories. You can view and compare different versions, revert changes if needed, and see who made modifications and when.
+                            On clicking at the Messages in the Navbar or, get started in chat's section you are redirected to type your username, type it and have fun !.
                             </p>
 
                     </div>
@@ -382,7 +621,7 @@
 
                         <!-- Text -->
                         <p class="text-body-secondary mb-6 mb-md-8">
-                            Our task management tools allow you to create tasks, assign them to team members, set deadlines, and track progress. You can organize tasks into projects, set priorities, and receive notifications for updates and deadlines.
+                            Our task management tools allow you to create tasks, edit task and also allows you to order them efficiently.When you access docs or google calendar through your id you can make it better like giving deadlines and all!
                             </p>
 
                     </div>
@@ -406,8 +645,7 @@
 
                         <!-- Text -->
                         <p class="text-body-secondary mb-6 mb-md-0">
-                            The video calling feature is linked with Google meet platform. So, the number of participants accepted in a meeting is in accordance with their regulations.
-                          
+                            No due to the apps being under the collaby you can have unlimited users, and we have no plans of getting subscriptions so yeh its Unlimited for now!
                            </p>
                     </div>
 
@@ -425,9 +663,7 @@
             <div class="col-12 col-md-10 col-lg-8 text-center">
 
                 <!-- Badge -->
-                <span class="badge rounded-pill text-bg-gray-700-subtle mb-4">
-          <span class="h6 fw-bold text-uppercase">Get started</span>
-                </span>
+
 
                 <!-- Heading -->
                 <h1 class="display-4 text-white">
@@ -442,10 +678,7 @@
                 </p>
 
                 <!-- Button -->
-                <a href="https://themes.getbootstrap.com/product/landkit/" target="_blank" class="btn btn-success lift">
-          Get Started
-        </a>
-
+               
             </div>
         </div>
         <!-- / .row -->
@@ -466,6 +699,81 @@
         <img src="nav and head/images/images/logo.png" alt="" width="100">
       </p>
     </footer>
+  </div>
+  <!-- Modal container -->
+<div class="modal-container" id="modal-container">
+    <!-- Register modal -->
+    <div class="modal" id="register-modal">
+      <div class="modal-content">
+        <!-- Register form will be loaded here -->
+        <form class="latch" action="http://localhost:3000/api/users/signup" method="POST">
+            <p class="l-title">Register</p>
+            <p class="message">Signup now and get full access to our workspace.</p>
+            
+            <label>
+                <input
+                    required
+                    placeholder="Full Name"
+                    type="text"
+                    class="input"
+                    name="fullName"
+                />
+            </label>
+                
+            <label>
+                <input
+                    required
+                    placeholder="Email"
+                    type="email"
+                    class="input"
+                    name="email"
+                />
+            </label> 
+            
+            <label>
+                <input
+                    required
+                    placeholder="Password"
+                    type="password"
+                    class="input"
+                    name="password"
+                />
+            </label>
+            
+            <button type="submit" class="submit">Submit</button>
+            <p class="signin">Already have an account? <a href="login.html">Log In</a></p>
+        </form>
+
+        
+
+      </div>
+    </div>
+    
+    <!-- Login modal -->
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <!-- Login form will be loaded here -->
+        <form class="licket" action="http://localhost:3000/api/users/login" method="POST">
+            <input
+                placeholder="E-mail"
+                id="email"
+                name="email"
+                type="email"
+                class="input"
+                required
+            />
+            <input
+                placeholder="Password"
+                id="password"
+                name="password"
+                type="password"
+                class="input"
+                required
+            />
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+      </div>
+    </div>
   </div>
 
 
@@ -503,6 +811,25 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="footer/js/vendor.bundle.js"></script>
 <script src="footer/js/theme.bundle.js"></script>
+<script>
+    document.getElementById('get-started-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('register-modal').style.display = 'block';
+    });
+  
+    document.getElementById('log-in-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('login-modal').style.display = 'block';
+    });
+  
+    // Add a click event listener to the modal background to close the modal
+    document.addEventListener('click', function(e) {
+      if (e.target.id === 'modal-container') {
+        document.getElementById('register-modal').style.display = 'none';
+        document.getElementById('login-modal').style.display = 'none';
+      }
+    });
+</script>
 
 
 </body>

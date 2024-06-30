@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaby | User-Page</title>
+    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="todo.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .todo-list-container {
+            position: absolute;
+            top: 100px; /* Adjust as needed to place below navbar */
+            right: 20px;
+            width: 45%;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-call-container {
+            position: absolute;
+            top: 100px; /* Adjust as needed to place below navbar */
+            left: 20px;
+            width: 45%;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-call-container img {
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .video-call-container h4 {
+            font-family: 'Times New Roman', Times, serif;
+            color: #000;
+            text-decoration:underline;
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .video-call-container p {
+            margin-top: 2rem;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            color: #000;
+            transition: linear;
+        }
+
+        .video-call-container button {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .video-call-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .chatbox-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .chatbox {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
+            z-index: 1000;
+        }
+
+        .chatbox-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbox-header h4 {
+            margin: 0;
+        }
+
+        .chatbox-header .close-btn {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .chatbox-body {
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chatbox-body .message {
+            margin-bottom: 10px;
+        }
+
+        .chatbox-body .message.sent {
+            text-align: right;
+        }
+
+        .chatbox-body .message p {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            margin: 0;
+        }
+
+        .chatbox-body .message.sent p {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .chatbox-footer {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .chatbox-footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .chatbox-footer button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .new-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45%;
+            height: 30%;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .new-chat-container h4 {
+            margin-bottom: 10px;
+            text-align: center;
+            text-decoration: underline;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .new-chat-container img {
+            max-width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .new-chat-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .new-chat-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 mb-3 border-bottom" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img src="logo.png" alt="Collaby" width="100">  
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="https://www.google.com/docs/about/" class="nav-link px-2 link-secondary">Workspace</a></li>
+                    <li><a onclick="redirectToChat()" class="nav-link px-2 link-dark">Message</a></li>
+                    <li><a href="videocall.html" class="nav-link px-2 link-dark">Conference</a></li>
+                    <li><a href="task.html" class="nav-link px-2 link-dark">Task Manager</a></li>
+                </ul>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="user-circle" width="35"><path fill="#B3B2F9" d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16a8,8,0,1,1,13.82,0Z"></path></svg>
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="todo-list-container">
+        <div class="wrapper">
+            <div class="task-input">
+                <img src="list-removebg-preview.png" alt="icon" width="44" height="30">
+                <input type="text" placeholder="  Add new task">
+            </div>
+            <div class="controls">
+                <div class="filters">
+                    <span id="all" class="active">All</span>
+                    <span id="pending">Pending</span>
+                    <span id="completed">Completed</span>
+                </div>
+                <button class="clear-btn">Clear All</button>
+            </div>
+            <ul class="task-box"></ul>
+        </div>
+    </div>
+
+
+    <div class="video-call-container">
+        <img src="video-call-image.png" alt="Video Call">
+        <h4>Video Conferencing</h4>
+        <p>To invite others to stream, join yourself and then share the link with others.</p>
+        <button onclick="window.location.href='videocall.html'">Start a conference</button>
+    </div>
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+            <h4>Chat</h4>
+            <button class="close-btn" onclick="toggleChatbox()">&times;</button>
+        </div>
+        <div class="chatbox-body">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" placeholder="Type a message..." id="chatInput">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="new-chat-container">
+        <h4>Write Your Messages Here</h4>
+        <img src="images.png" alt="Chat">
+        <button onclick="redirectToChat()">Get Started</button>
+    </div>
+
+    <script src="todo.js"></script>
+    <script>
+        function toggleChatbox() {
+            const chatbox = document.getElementById('chatbox');
+            chatbox.style.display = (chatbox.style.display === 'none' || chatbox.style.display === '') ? 'block' : 'none';
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('chatInput');
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                appendMessage(message, true);
+                messageInput.value = '';
+            }
+        }
+
+        function appendMessage(message, sent) {
+            const chatboxBody = document.querySelector('.chatbox-body');
+            const messageContainer = document.createElement('div');
+            messageContainer.classList.add('message');
+            if (sent) {
+                messageContainer.classList.add('sent');
+            }
+            const messageText = document.createElement('p');
+            messageText.textContent = message;
+            messageContainer.appendChild(messageText);
+            chatboxBody.appendChild(messageContainer);
+            chatboxBody.scrollTop = chatboxBody.scrollHeight; // Auto scroll to bottom
+        }
+
+        function redirectToChat() {
+            window.location.href = "http://localhost:5173/";
+        }
+    </script>
+</body>
+</html>

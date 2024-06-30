@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Base</title>
+    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="todo.css"> <!-- Add todo.css -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .todo-list-container {
+            position: absolute;
+            top: 70px; /* Adjust as needed to place below navbar */
+            right: 20px;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .wrapper {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .task-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .task-input img {
+            margin-right: 10px;
+        }
+
+        .task-input input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .filters span {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .filters span:hover, .filters .active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .clear-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .clear-btn:hover {
+            background-color: #c82333;
+        }
+
+        .task-box {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .task-box .task {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .task-box .task.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .task-box .task input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .task-box .task .delete-btn {
+            background-color: transparent;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+        }
+
+        .task-box .task .delete-btn:hover {
+            color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header class="p-3 mb-3 border-bottom" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img src="logo.png" alt="Collaby" width="100">  
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 link-secondary">Workspace</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Message</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Conference</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Task Manager</a></li>
+                </ul>
+                <!-- user profile -->
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="user-circle" width="35"><path fill="#B3B2F9" d="M12,2A10,10,0,0,0,4.65,18.76h0a10,10,0,0,0,14.7,0h0A10,10,0,0,0,12,2Zm0,18a8,8,0,0,1-5.55-2.25,6,6,0,0,1,11.1,0A8,8,0,0,1,12,20ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Zm8.91,6A8,8,0,0,0,15,12.62a4,4,0,1,0-6,0A8,8,0,0,0,5.09,16A7.92,7.92,0,0,1,4,12a8,8,0,0,1,16,0A7.92,7.92,0,0,1,18.91,16Z"></path></svg>
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Add todo list container below navbar -->
+    <div class="todo-list-container">
+        <div class="wrapper">
+            <div class="task-input">
+                <img src="list-removebg-preview.png" alt="icon" width="44" height="30">
+                <input type="text" placeholder="  Add new task">
+            </div>
+            <div class="controls">
+                <div class="filters">
+                    <span id="all" class="active">All</span>
+                    <span id="pending">Pending</span>
+                    <span id="completed">Completed</span>
+                </div>
+                <button class="clear-btn">Clear All</button>
+            </div>
+            <ul class="task-box"></ul>
+        </div>
+    </div>
+
+    <script>
+        const taskInput = document.querySelector(".task-input input");
+        const taskBox = document.querySelector(".task-box");
+        const filters = document.querySelectorAll(".filters span");
+        const clearAll = document.querySelector(".clear-btn");
+
+        let todos = JSON.parse(localStorage.getItem("todo-list"));
+
+        filters.forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector("span.active").classList.remove("active");
+                btn.classList.add("active");
+                showTodo();
+            });
+        });
+
+        function showTodo() {
+            let li = "";
+            if (todos) {
+                todos.forEach((todo, id) => {
+                    let isCompleted = todo.status == "completed" ? "checked" : "";
+                    li += `<li class="task">
+                                <label for="${id}">
+                                    <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${isCompleted}>
+                                    <p class="${isCompleted}">${todo.name}</p>
+                                </label>
+                                <button onclick="deleteTask(${id})" class="delete-btn">
+                                    <i class="uil uil-trash"></i>
+                                </button>
+                            </li>`;
+                });
+            }
+            taskBox.innerHTML = li || `<span>You don't have any tasks here</span>`;
+        }
+
+        showTodo();
+
+        function updateStatus(selectedTask) {
+            let taskName = selectedTask.nextElementSibling;
+            if (selectedTask.checked) {
+                taskName.classList.add("checked");
+                todos[selectedTask.id].status = "completed";
+            } else {
+                taskName.classList.remove("checked");
+                todos[selectedTask.id].status = "pending";
+            }
+            localStorage.setItem("todo-list", JSON.stringify(todos));
+        }
+
+        function deleteTask(deleteId) {
+            todos.splice(deleteId, 1);
+            localStorage.setItem("todo-list", JSON.stringify(todos));
+            showTodo();
+        }
+
+        clearAll.addEventListener("click", () => {
+            todos.splice(0, todos.length);
+            localStorage.setItem("todo-list", JSON.stringify(todos));
+            showTodo();
+        });
+
+        taskInput.addEventListener("keyup", e => {
+            let userTask = taskInput.value.trim();
+            if (e.key == "Enter" && userTask) {
+                if (!todos) {
+                    todos = [];
+                }
+                taskInput.value = "";
+                let taskInfo = { name: userTask, status: "pending" };
+                todos.push(taskInfo);
+                localStorage.setItem("todo-list", JSON.stringify(todos));
+                showTodo();
+            }
+        });
+    </script>
+</body>
+</html>

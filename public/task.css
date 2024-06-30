@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.todo-list-container {
+    position: absolute;
+    top: 100px; /* Adjust as needed to place below navbar */
+    right: 20px;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.wrapper {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.task-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-input img {
+    margin-right: 10px;
+}
+
+.task-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filters span {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.filters span:hover, .filters .active {
+    background-color: #007bff;
+    color: white;
+}
+
+.clear-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.clear-btn:hover {
+    background-color: #c82333;
+}
+
+.task-box {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.task-box .task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.task-box .task.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-box .task input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task-box .task .delete-btn {
+    background-color: transparent;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.task-box .task .delete-btn:hover {
+    color: #c82333;
+}
